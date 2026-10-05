@@ -10,8 +10,9 @@ from seed import seed
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "officehours-dev-secret")
-app.config["SESSION_COOKIE_HTTPONLY"] = False
-app.config["SESSION_COOKIE_SAMESITE"] = None
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "lax"
+app.config["SESSION_COOKIE_SECURE"] = True
 app.config["SESSION_COOKIE_NAME"] = "hold_flash"
 
 
